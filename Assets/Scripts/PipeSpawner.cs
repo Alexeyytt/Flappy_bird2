@@ -13,11 +13,17 @@ public class PipeSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    public void StartSpawning()
+    {
         StartCoroutine(SpawnPipes());
     }
 
     IEnumerator SpawnPipes()
     {
+
         while (true)
         {
             GameObject newPipe = Instantiate(pipes);
@@ -36,3 +42,4 @@ public class PipeSpawner : MonoBehaviour
         
     }
 }
+                                      
