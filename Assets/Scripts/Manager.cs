@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         startGameUIComponents = GameObject.FindGameObjectsWithTag("StartGameUIComponets");
         gameOverUIComponents = GameObject.FindGameObjectsWithTag("GameOverUIComponets");
         DisableUIComponent(gameOverUIComponents);
@@ -20,16 +21,30 @@ public class Manager : MonoBehaviour
         DisableScore(score);
     }
 
-    public void GameOver()
+    public void DisableStartUI()
+    {
+        DisableUIComponent(startGameUIComponents);
+    }
+
+    public void Startgame()
     {
         EnableUIComponent(startGameUIComponents);
     }
-    private void DisableScore(GameObject score)
+    public void GameOver()
+    {
+        EnableUIComponent(gameOverUIComponents);
+    }
+    public void ShowScore()
+    {
+        score.SetActive(true);
+    }
+
+    public void DisableScore(GameObject score)
     {
         score.SetActive(false);
     }
 
-    private void EnableScore(GameObject score)
+    public void EnableScore(GameObject score)
     {
         score.SetActive(true);
     }
